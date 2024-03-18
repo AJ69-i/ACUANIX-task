@@ -1,0 +1,62 @@
+.is-active {
+  color: #3F51B5;
+}
+
+.headroom--pinned {
+  display: block;
+}
+
+.headroom--unpinned {
+  display: none;
+}
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear !important;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+nav {
+  & {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .navigation-header {
+    .navigation-brand-text {
+      a {
+        & {
+          color: #FF5C01;
+        }
+      }
+    }
+  }
+
+  .navigation-body {
+    .navigation-body-header {
+      .navigation-brand-text {
+        a {
+          & {
+            color: #FF5C01;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  nav {
+    & {
+      height: 100%;
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+}

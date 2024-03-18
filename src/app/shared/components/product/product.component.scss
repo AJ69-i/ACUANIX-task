@@ -1,0 +1,29 @@
+mat-card {
+  & {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0px 12px;
+  }
+
+  img {
+    & {
+      height: 15vw;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    img {
+      height: 30vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    img {
+      height: 42vw;
+    }
+  }
+}

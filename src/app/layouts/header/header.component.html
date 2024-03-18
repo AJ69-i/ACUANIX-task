@@ -1,0 +1,33 @@
+<header>
+    <nav id="navigation" class="navigation navigation-justified fixed-top d-block headroom" #header>
+      <div class="navigation-header">
+        <div class="navigation-brand-text">
+          <a class="text-bold">ACUANIX</a>
+        </div>
+        <div class="navigation-button-toggler">
+          <i class="hamburger-icon"></i>
+        </div>
+      </div>
+      <div class="navigation-body">
+        <div class="navigation-body-header">
+          <div class="navigation-brand-text">
+            <a class="text-bold">ACUANIX</a>
+          </div>
+          <span class="navigation-body-close-button">&#10005;</span>
+        </div>
+        <ul class="navigation-menu">
+          <li class="navigation-item">
+            <a class="navigation-link" routerLinkActive="is-active" routerLink="/products">Products</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" routerLinkActive="is-active" routerLink="/carts">Carts</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link">
+              <button mat-raised-button color="warn" type="button" class="w-100" (click)="logOut()">Log out</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>

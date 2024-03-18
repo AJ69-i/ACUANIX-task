@@ -1,0 +1,27 @@
+<section class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+  <h1 class="fs-1 mb-4">ACUANIX</h1>
+  <div class="col-lg-5 col-md-6 col-sm-12">
+    <form class="example-form" [formGroup]="loginForm" class="w-100" (ngSubmit)="login(loginForm)">
+      <mat-form-field class="example-full-width">
+        <mat-label>username</mat-label>
+        <input type="text" matInput formControlName="username" placeholder="Enter your username">
+        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+          User Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" placeholder="Enter the password" [type]="hide ? 'password' : 'text'">
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="col-6 m-auto">
+        <button mat-raised-button color="primary" type="submit" class="w-100">Sign In</button>
+      </div>
+    </form>
+  </div>
+</section>

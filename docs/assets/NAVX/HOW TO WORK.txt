@@ -1,0 +1,13 @@
+Javascript
+
+<script type="text/javascript" src="NAVX/files/js/navigation.min.js"></script>
+<script type="text/javascript" src="./assets/js/navigation.js"></script>
+<script>var navigation = new Navigation(document.getElementById("navigation"));</script>
+
+Angular
+
+in component's typescript file 
+declare var Navigation: any;
+ ngOnInit(): void {
+    var navigation = new Navigation(document.getElementById("navigation"));
+  }

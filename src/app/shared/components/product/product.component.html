@@ -1,0 +1,28 @@
+<mat-card class="rounded-4">
+  <mat-card-header class="d-block">
+    <div class="w-100"><mat-card-title class="text-center">{{item.title | slice:2}}</mat-card-title></div>
+    <div class="w-100"><mat-card-subtitle class="text-center mb-1">{{item.brand}}</mat-card-subtitle></div>
+  </mat-card-header>
+  <img mat-card-image src="{{item.thumbnail}}" class="w-100 rounded-3" alt="Photo of a Shiba Inu">
+  <mat-card-content class="p-lg-0">
+    <p class="mt-3"> {{item.description | slice:4}} </p> <!-- Creating and using Custom pipes for slicing -->
+    <ngx-stars [readonly]="false" [size]="1" [maxStars]="5" [color]="'gold'"
+      [initialStars]="item.rating"></ngx-stars>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+      <p>Price:- {{item.price}}$</p>
+      <p>Discount:- {{item.discountPercentage}}%</p>
+    </div>
+    <p class="alert alert-warning" *ngIf="!item.stock">Out of stock</p>
+  </mat-card-content>
+  <mat-card-actions class="p-lg-0">
+    <div class="row mt-2">
+      <mat-form-field class="col-lg-6" appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input type="number" matInput [(ngModel)]="item.amount" placeholder="amount" min="0">
+      </mat-form-field>
+      <div class="col-lg-6 d-flex justify-content-lg-end justify-content-start align-items-center">
+        <button mat-raised-button color="primary" type="button" (click)="AddtoCart(item)">Add to Cart</button>
+      </div>
+    </div>
+  </mat-card-actions>
+</mat-card>

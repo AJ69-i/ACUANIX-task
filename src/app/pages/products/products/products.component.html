@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <mat-form-field appearance="outline" class="col-lg-6">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" (keyup)="search($any($event).target.value)">
+      <button type="button" matSuffix mat-icon-button aria-label="Search">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="col-lg-4">
+      <mat-label>Sorting</mat-label>
+      <mat-select (selectionChange)="selectCategory($event.value)">
+        <mat-option value="all">All Categories</mat-option>
+        <mat-option value="smartphones">Smartphones</mat-option>
+        <mat-option value="laptops">Laptops</mat-option>
+        <mat-option value="fragrances">Fragrances</mat-option>
+        <mat-option value="skincare">Skincare</mat-option>
+        <mat-option value="home-decoration">Home Decoration</mat-option>
+        <mat-option value="groceries">Groceries</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="container p-lg-0 p-md-0 p-sm-0 p-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-5 col-sm-12 m-2 p-0" *ngFor="let item of products; trackBy: trackByFn">
+      <app-product [item]="item" (SendItem)="AddtoCart($event)"></app-product>
+    </div>
+  </div>
+</div>
+
+<div class="container first-section">
+  <div class="row justify-content-center">
+    <mat-paginator class="col-10" [length]="totalItems" [pageSize]="pageSize" [pageIndex]="pageIndex"
+      [pageSizeOptions]="[5, 10, 25, 50]" (page)="handlePageChange($event)" (pageSize)="handlePageSizeChange($event)">
+    </mat-paginator>
+  </div>
+</div>
+
+
+<app-loader></app-loader>
